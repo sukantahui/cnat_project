@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './Navbar.jsx'; // or relative path like ./components/Navbar.jsx
-import background from './assets/background.png';
 import Header from './Header.jsx';
 import About from './About.jsx';
 import Courses from './Courses.jsx';

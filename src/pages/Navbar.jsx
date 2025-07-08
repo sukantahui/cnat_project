@@ -1,5 +1,5 @@
 import React from 'react';
-import cnat from './assets/cnat.png';
+import cnat from '../assets/cnat.png';
 
 const Navbar = () => {
   return (

@@ -1,11 +1,11 @@
 // src/Teachers.jsx
 import React from 'react';
-import teacher1 from './assets/teacher1.jpg';
-import teacher2 from './assets/teacher2.jpg';
-import teacher3 from './assets/teacher3.jpg';
-import teacher4 from './assets/teacher4.jpg';
-import teacher5 from './assets/teacher5.jpg';
-import teacher6 from './assets/teacher6.jpg';
+import teacher1 from '../assets/teacher1.jpg';
+import teacher2 from '../assets/teacher2.jpg';
+import teacher3 from '../assets/teacher3.jpg';
+import teacher4 from '../assets/teacher4.jpg';
+import teacher5 from '../assets/teacher5.jpg';
+import teacher6 from '../assets/teacher6.jpg';
 
 const teachers = [
   {
