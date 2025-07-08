@@ -6,6 +6,7 @@ import About from './About.jsx';
 import Courses from './Courses.jsx';
 import Contact from './Contact.jsx';
 import Footer from './Footer.jsx';
+import Teachers from './Teachers.jsx';
 const CodingInstitute = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const CodingInstitute = () => {
       <Header/>
       <About/>
       <Courses/>
+      <Teachers/>
       <Contact/>
       <Footer/>
     </div>
