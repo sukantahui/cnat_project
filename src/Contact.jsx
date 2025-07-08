@@ -2,31 +2,75 @@
 import React from 'react';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can replace this with form submission logic (e.g., API call)
-    alert("Thank you for contacting us!");
-  };
+  const whatsappNumber = "919432456083";
+  const message = encodeURIComponent("Hi, I want to know about your courses and fees.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (
     <section id="contact" className="bg-light py-5">
-      <div className="container">
-        <h2 className="text-center mb-4">Contact Us</h2>
-        <form className="mx-auto" style={{ maxWidth: "600px" }} onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">Full Name</label>
-            <input type="text" className="form-control" id="name" placeholder="Enter your name" required />
+      <div className="container text-center">
+        <h2 className="mb-4">Contact Us</h2>
+        <p className="lead mb-4">
+          Have questions about our courses or programs? Reach out to us on WhatsApp or visit us at our location!
+        </p>
+
+        {/* ✅ WhatsApp Button */}
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-success btn-lg mb-4"
+        >
+          💬 Message Us on WhatsApp
+        </a>
+
+        {/* ✅ Physical Address */}
+        <div className="mt-4">
+          <h5 className="fw-bold mb-2">📍 Our Institute Address</h5>
+          <p className="mb-1">Coder & AccoTax Learning Center</p>
+          <p className="mb-1">Ground Floor</p>
+          <p className="mb-1">25(10/A) Shibtala Road</p>
+          <p className="mb-1">PO - Nona Chandan Pukur</p>
+          <p className="mb-1">Barrackpore, Kol - 700122</p>
+        </div>
+
+        {/* ✅ Google Map */}
+        <div className="mt-4">
+          <iframe
+            title="Coder & AccoTax Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d283.52283098422913!2d88.37444724388779!3d22.76869060091701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b8eb3168ac5%3A0x7666eac9a1c26430!2sCoder%20%26%20AccoTax!5e1!3m2!1sen!2sin!4v1751969297792!5m2!1sen!2sin"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* ✅ Contact Email */}
+        <div className="mt-4">
+          <h5 className="fw-bold">📧 Email</h5>
+          <p>
+            <a href="mailto:codenaccotax@gmail.com">codenaccotax@gmail.com</a>
+          </p>
+        </div>
+
+        {/* ✅ Social Media */}
+        <div className="mt-4">
+          <h5 className="fw-bold">🔗 Follow Us</h5>
+          <div className="d-flex justify-content-center gap-4 fs-4">
+            <a href="https://www.facebook.com/profile.php?id=61561702110617" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-facebook"></i> Facebook
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-instagram"></i> Instagram
+            </a>
+            <a href="https://www.youtube.com/@CodernAccotax" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-youtube"></i> YouTube
+            </a>
           </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="email" placeholder="name@example.com" required />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">Message</label>
-            <textarea className="form-control" id="message" rows="3" placeholder="Your message..." required></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary w-100">Submit</button>
-        </form>
+        </div>
       </div>
     </section>
   );
