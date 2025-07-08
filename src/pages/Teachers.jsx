@@ -1,5 +1,6 @@
 // src/Teachers.jsx
 import React from 'react';
+import styles from './Teachers.module.css';
 import teacher1 from '../assets/teacher1.jpg';
 import teacher2 from '../assets/teacher2.jpg';
 import teacher3 from '../assets/teacher3.jpg';
@@ -54,12 +55,11 @@ const Teachers = () => {
         <div className="row">
           {teachers.map((teacher, index) => (
             <div className="col-md-4 text-center mb-4" key={index}>
-              <div className="card shadow-sm border-0 h-100">
+              <div className={`card shadow-sm border-0 h-100 ${styles.cardCustom}`}>
                 <img
                   src={teacher.image}
                   alt={teacher.name}
-                  className="card-img-top"
-                  style={{ height: '300px', objectFit: 'cover' }}
+                  className={`card-img-top ${styles.cardImage}`}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{teacher.name}</h5>
