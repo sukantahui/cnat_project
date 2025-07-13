@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import javaImg from '../assets/java-logo.svg';
 import reactImg from '../assets/react-logo.svg';
-<<<<<<< HEAD
 import './Courses.css'; // Optional if using custom styles
-=======
 import pythonImg from '../assets/python-logo.webp';
->>>>>>> fc43426ee83929f99628cedbfa88f60ea6647383
+
 
 const Courses = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
