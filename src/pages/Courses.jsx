@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import javaImg from '../assets/java-logo.svg';
 import reactImg from '../assets/react-logo.svg';
+import pythonImg from '../assets/python-logo.webp';
 
 const Courses = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -8,6 +9,7 @@ const Courses = () => {
   const whatsappNumber = "919432456083";
 
   const courseList = [
+   
     {
       title: "Full Stack Web Development",
       desc: "Learn HTML, CSS, JS, React, Node.js & more.",
@@ -18,7 +20,7 @@ const Courses = () => {
       title: "Python Programming",
       desc: "Master Python for web, data science, and AI.",
       more: "Includes Django for web development, Pandas for analysis, and frameworks like TensorFlow for machine learning.",
-      image: javaImg,
+      image: pythonImg,
     },
     {
       title: "Data Structures & Algorithms",
@@ -36,6 +38,54 @@ const Courses = () => {
       title: "C Programming",
       desc: "Learn low-level programming with C.",
       more: "Includes memory management, pointers, structures, file I/O, and algorithmic problem solving using C.",
+      image: javaImg,
+    },
+    {
+      title: "C++ Programming",
+      desc: "Deep dive into OOP using C++.",
+      more: "Covers C++ basics to advanced topics like classes, inheritance, polymorphism, STL, and file handling.",
+      image: javaImg,
+    },
+    {
+      title: "Basic Microsoft Office",
+      desc: "Master Word, Excel, and PowerPoint basics.",
+      more: "Learn document creation, spreadsheets, data analysis, and presentations—perfect for office or academic use.",
+      image: javaImg,
+    },
+    {
+      title: "Advanced DSA for B.Tech/BCA",
+      desc: "Master DSA with a focus on technical placements.",
+      more: "Tailored for B.Tech/BCA students—covers complexity analysis, competitive coding, and advanced data structures.",
+      image: javaImg,
+    },
+    {
+      title: "Computer Architecture",
+      desc: "Understand the hardware-software interface.",
+      more: "Learn digital logic, processor design, memory hierarchy, instruction cycles, and microarchitecture concepts.",
+      image: javaImg,
+    },
+    {
+      title: "Modern JavaScript Frameworks",
+      desc: "Get hands-on with React, Angular, and Laravel.",
+      more: "Learn modern front-end and back-end development with SPA, REST APIs, state management, and MVC architecture.",
+      image: reactImg,
+    },
+    {
+      title: "Database Management Systems (DBMS)",
+      desc: "Master the backbone of data-driven apps.",
+      more: "Covers relational databases, SQL, normalization, transactions, indexing, joins, and hands-on with MySQL/PostgreSQL.",
+      image: javaImg,
+    },
+    {
+      title: "Artificial Intelligence & Robotics for Children",
+      desc: "Introduce young minds to AI and robotics.",
+      more: "Fun and engaging lessons on basic robotics, visual programming, and introductory AI logic for school kids.",
+      image: javaImg,
+    },
+    {
+      title: "School-Level Computer Science (CBSE/ICSE/WBCHSE)",
+      desc: "Class XI & XII curriculum-aligned courses.",
+      more: "Covers computer applications, basic programming (Python/Java), logic building, DBMS, and exam-focused guidance.",
       image: javaImg,
     },
     {
@@ -68,6 +118,7 @@ const Courses = () => {
       more: "Covers TallyPrime, GST filing, invoice management, tax calculation, and payroll processing in practical sessions.",
       image: javaImg,
     },
+  
   ];
 
   const toggleExpand = (idx) => {
