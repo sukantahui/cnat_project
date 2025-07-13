@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Courses.css';
-import javaImg from '../assets/java-logo.svg';
-import reactImg from '../assets/react-logo.svg';
-import pythonImg from '../assets/python-logo.svg';
+import javaImg from '../assets/course-images/java-logo.svg';
+import reactImg from '../assets/course-images/react-logo.svg';
+import pythonImg from '../assets/course-images/python-logo.svg';
+import defaultImg from '../assets/course-images/default-logo.svg';
 import coursesData from '../data/courses.json'; // Import JSON data
 
 const imageMap = {
@@ -18,7 +19,7 @@ const Courses = () => {
 
   const courseList = coursesData.map(course => ({
     ...course,
-    image: imageMap[course.image] || null
+    image: imageMap[course.image] || defaultImg
   }));
 
   const groupedCourses = courseList.reduce((groups, course) => {

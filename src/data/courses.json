@@ -4,7 +4,7 @@
       "title": "Full Stack Web Development",
       "desc": "Learn HTML, CSS, JS, React, Node.js & more.",
       "more": "Covers front-end and back-end development with real-world projects, Git/GitHub, APIs, and deployment practices.",
-      "image": "reactImg",
+      "image": null,
       "category": "Web Development"
     },
     {
@@ -20,7 +20,7 @@
       "title": "Backend Development with Node.js",
       "desc": "Learn server-side development using Node.js.",
       "more": "Covers Express.js, RESTful APIs, authentication, and working with databases like MongoDB.",
-      "image": "javaImg",
+      "image": null,
       "category": "Web Development"
     },
     {
