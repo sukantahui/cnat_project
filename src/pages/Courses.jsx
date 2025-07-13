@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import javaImg from '../assets/java-logo.svg';
 import reactImg from '../assets/react-logo.svg';
+import './Courses.css'; // Optional if using custom styles
 
 const Courses = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
-
   const whatsappNumber = "919432456083";
 
   const courseList = [
@@ -80,21 +80,21 @@ const Courses = () => {
   return (
     <section id="courses" className="py-5 bg-light">
       <div className="container">
-        <h2 className="text-center mb-5 fw-bold">Our Courses</h2>
+        <h2 className="text-center mb-5 fw-bold text-primary">🎓 Our Courses</h2>
         <div className="row g-4">
           {courseList.map((course, idx) => (
-            <div className="col-md-6 col-lg-4" key={idx}>
-              <div className="card h-100 shadow-sm border-0 text-center">
-                <div className="card-body d-flex flex-column justify-content-between">
-                  {course.image && (
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="card-img-top"
-                      style={{ height: '200px' }}
-                    />
-                  )}
-                  <h5 className="card-title fw-semibold mb-3">{course.title}</h5>
+            <div className="col-12 col-md-6 col-lg-4" key={idx}>
+              <div className="card h-100 shadow-sm border-0">
+                {course.image && (
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="card-img-top img-fluid p-3"
+                    style={{ height: '180px', objectFit: 'contain' }}
+                  />
+                )}
+                <div className="card-body d-flex flex-column text-center">
+                  <h5 className="card-title fw-semibold mb-2 text-dark border-bottom pb-2">{course.title}</h5>
                   <p className="card-text text-muted">{course.desc}</p>
 
                   {expandedIndex === idx && (
@@ -104,18 +104,7 @@ const Courses = () => {
                   <div className="d-flex flex-column gap-2 mt-auto">
                     <button
                       onClick={() => toggleExpand(idx)}
-                      className="btn btn-outline-primary rounded-3 fw-semibold shadow-sm"
-                      style={{ transition: "all 0.3s ease" }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.backgroundColor = "#0d6efd";
-                        e.currentTarget.style.color = "#fff";
-                        e.currentTarget.style.boxShadow = "0 4px 12px rgba(13,110,253,0.3)";
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.backgroundColor = "";
-                        e.currentTarget.style.color = "";
-                        e.currentTarget.style.boxShadow = "none";
-                      }}
+                      className="btn btn-outline-primary rounded-3 fw-semibold"
                     >
                       {expandedIndex === idx ? "⬆ Show Less" : "⬇ Learn More"}
                     </button>
