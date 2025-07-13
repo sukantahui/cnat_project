@@ -49,7 +49,7 @@ const teachers = [
 
 const Teachers = () => {
   return (
-    <section id="teachers" className="py-5 bg-white">
+    
       <div className="container">
         <h2 className="text-center mb-5">Meet Our Instructors</h2>
         <div className="row">
@@ -71,7 +71,6 @@ const Teachers = () => {
           ))}
         </div>
       </div>
-    </section>
   );
 };
 

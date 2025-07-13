@@ -6,17 +6,21 @@ import Courses from './Courses.jsx';
 import Contact from './Contact.jsx';
 import Footer from './Footer.jsx';
 import Teachers from './Teachers.jsx';
+import Services from './Services.jsx';
 const CodingInstitute = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Header/>
       <About/>
       <Courses/>
-      <Teachers/>
+      <section id="teachers" className="py-5 bg-white">
+        <Teachers/>
+      </section>
+      <Services/>
       <Contact/>
       <Footer/>
-    </div>
+    </>
   );
 };
 

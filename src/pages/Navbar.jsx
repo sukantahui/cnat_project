@@ -3,6 +3,7 @@ import cnat from '../assets/cnat.png';
 
 const Navbar = () => {
   return (
+    <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container">
         <a className="navbar-brand d-flex align-items-center gap-2" href="#">
@@ -22,12 +23,16 @@ const Navbar = () => {
               <a className="nav-link" href="#courses">Courses</a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" href="#teachers">Faculties</a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
