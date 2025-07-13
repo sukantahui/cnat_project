@@ -1,8 +1,8 @@
 [
   {
     "category": "Web Development",
-    "groupImage": null,
-    "groupDesc": "Learn HTML, CSS, JS, React, Node.js & more.",
+    "groupImage": "webDevImg",
+    "groupDesc": "Web Designing is the art and science of creating visually appealing and user-friendly websites. It involves crafting layouts, selecting color schemes, designing graphics, and organizing content to deliver a smooth and engaging user experience. Whether you're building a personal portfolio, a business website, or an e-commerce platform, web designing combines creativity with functionality. It uses tools like HTML, CSS, JavaScript, Bootstrap, and Figma to bring ideas to life on the web.",
     "courses": [
       {
         "courseID": "course001",
@@ -48,7 +48,7 @@
   },
   {
     "category": "Programming",
-    "groupImage": null,
+    "groupImage": "programmingImg",
     "groupDesc": "Learn HTML, CSS, JS, React, Node.js & more.",
     "courses": [
       {
@@ -95,7 +95,7 @@
   },
   {
     "category": "Accounts",
-    "groupImage": null,
+    "groupImage": "accountsImg",
     "groupDesc": "Learn Accounts",
     "courses": [
       {
@@ -150,7 +150,7 @@
   },
   {
     "category": "Data Analysis",
-    "groupImage": null,
+    "groupImage": "dataanalysisImg",
     "groupDesc": "Data analysis details",
     "courses": [
       {
@@ -205,7 +205,7 @@
   },
   {
     "category": "school",
-    "groupImage": null,
+    "groupImage": "studentImg",
     "groupDesc": "Learn HTML, CSS, JS, React, Node.js & more.",
     "courses": [
       {

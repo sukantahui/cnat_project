@@ -1,27 +1,44 @@
 import React, { useState } from 'react';
 import './Courses.css';
+
+// Course images
 import javaImg from '../assets/course-images/java-logo.svg';
 import reactImg from '../assets/course-images/react-logo.svg';
 import pythonImg from '../assets/course-images/python-logo.svg';
 import defaultImg from '../assets/course-images/default-logo.svg';
+
+// Group images
 import webDevImg from '../assets/group-images/webdev.logo.svg';
 import codeImg from '../assets/group-images/code.logo.svg';
-// Add other group images as needed
+import excelImg from '../assets/group-images/excel.logo.svg';
+import taxImg from '../assets/group-images/tax.logo.svg';
+import hardwareImg from '../assets/group-images/hardware.logo.svg';
+import programmingImg from '../assets/group-images/programming.logo.svg';
+import accountsImg from '../assets/group-images/accounts.logo.svg';
+import dataanalysisImg from '../assets/group-images/dataanalysis.logo.svg';
+import studentImg from '../assets/group-images/student.logo.svg';
+
 import coursesData from '../data/courses.json';
 
 const imageMap = {
   javaImg,
   reactImg,
   pythonImg,
+  defaultImg,
   webDevImg,
   codeImg,
-  defaultImg,
+  excelImg,
+  taxImg,
+  hardwareImg,
+  programmingImg,
+  accountsImg,
+  dataanalysisImg,
+  studentImg
 };
 
 const Courses = () => {
   const [expandedGroups, setExpandedGroups] = useState({});
   const [courseDescExpanded, setCourseDescExpanded] = useState({});
-
   const whatsappNumber = "919432456083";
 
   const toggleGroup = (category) => {
@@ -56,14 +73,12 @@ const Courses = () => {
               >
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    {imageMap[group.groupImage] && (
-                      <img
-                        src={imageMap[group.groupImage]}
-                        alt={group.category}
-                        className="me-3"
-                        style={{ height: 50, width: 50, objectFit: 'contain' }}
-                      />
-                    )}
+                    <img
+                      src={imageMap[group.groupImage] || imageMap.defaultImg}
+                      alt={group.category}
+                      className="me-3"
+                      style={{ height: 50, width: 50, objectFit: 'contain' }}
+                    />
                     <div>
                       <h4 className="card-title text-primary mb-0">{group.category}</h4>
                       <p className="text-muted small">{group.groupDesc}</p>
@@ -71,7 +86,7 @@ const Courses = () => {
                   </div>
 
                   {expandedGroups[group.category] && (
-                    <div className="row g-3 mt-3">
+                    <div className="row g-3 mt-3" onClick={(e) => e.stopPropagation()}>
                       {group.courses.map((course) => (
                         <div className="col-12" key={course.courseID}>
                           <div className="card course-card border">
@@ -79,7 +94,7 @@ const Courses = () => {
                               {imageMap[course.image] && (
                                 <div className="col-4 p-2">
                                   <img
-                                    src={imageMap[course.image]}
+                                    src={imageMap[course.image] || imageMap.defaultImg}
                                     alt={course.title}
                                     className="img-fluid"
                                     style={{ maxHeight: '100px', objectFit: 'contain' }}
@@ -97,7 +112,7 @@ const Courses = () => {
                                 <div className="d-flex flex-column gap-2">
                                   <button
                                     onClick={(e) => {
-                                      e.stopPropagation(); // Prevent parent click
+                                      e.stopPropagation();
                                       toggleCourseDescription(course.courseID);
                                     }}
                                     className="btn btn-sm btn-outline-primary"

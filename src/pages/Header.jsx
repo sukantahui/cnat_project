@@ -1,7 +1,8 @@
 // src/Header.jsx
 import React from 'react';
 import { Helmet } from 'react-helmet'; // ✅ Make sure Helmet is imported
-import background from '../assets/background.png';
+// import background from '../assets/background.png';
+import background from '../assets/background.jpg';
 
 const Header = () => {
   return (
