@@ -4,90 +4,134 @@ import javaImg from '../assets/course-images/java-logo.svg';
 import reactImg from '../assets/course-images/react-logo.svg';
 import pythonImg from '../assets/course-images/python-logo.svg';
 import defaultImg from '../assets/course-images/default-logo.svg';
-import coursesData from '../data/courses.json'; // Import JSON data
+import webDevImg from '../assets/group-images/webdev.logo.svg';
+import codeImg from '../assets/group-images/code.logo.svg';
+// Add other group images as needed
+import coursesData from '../data/courses.json';
 
 const imageMap = {
   javaImg,
   reactImg,
   pythonImg,
+  webDevImg,
+  codeImg,
+  defaultImg,
 };
 
 const Courses = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedGroups, setExpandedGroups] = useState({});
+  const [courseDescExpanded, setCourseDescExpanded] = useState({});
 
   const whatsappNumber = "919432456083";
 
-  const courseList = coursesData.map(course => ({
-    ...course,
-    image: imageMap[course.image] || defaultImg
-  }));
-
-  const groupedCourses = courseList.reduce((groups, course) => {
-    if (!groups[course.category]) {
-      groups[course.category] = [];
-    }
-    groups[course.category].push(course);
-    return groups;
-  }, {});
-
-  const toggleExpand = (idx) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
+  const toggleGroup = (category) => {
+    setExpandedGroups(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
   };
 
-  const encodeMessage = (courseTitle) =>
-    encodeURIComponent(`Hi, I'm interested in the "${courseTitle}" course. Could you please share location and fee details?`);
+  const toggleCourseDescription = (courseID) => {
+    setCourseDescExpanded(prev => ({
+      ...prev,
+      [courseID]: !prev[courseID]
+    }));
+  };
+
+  const encodeMessage = (title) =>
+    encodeURIComponent(`Hi, I'm interested in the "${title}" course. Could you please share location and fee details?`);
 
   return (
     <section id="courses" className="py-5 bg-light">
       <div className="container">
         <h2 className="text-center mb-5 fw-bold text-primary">🎓 Our Courses</h2>
-        {Object.entries(groupedCourses).map(([category, courses]) => (
-          <div key={category} className="mb-5">
-            <h3 className="text-secondary border-bottom pb-2 mb-4">{category}</h3>
-            <div className="row g-4">
-              {courses.map((course, idx) => (
-                <div className="col-12 col-md-6 col-lg-4" key={course.courseID}>
-                  <div className="card course-card h-100 shadow-sm border-0">
-                    {course.image && (
+
+        <div className="row g-4">
+          {coursesData.map((group) => (
+            <div className="col-12 col-md-6" key={group.category}>
+              <div
+                className="card shadow-sm border-0 h-100 group-card"
+                onClick={() => toggleGroup(group.category)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    {imageMap[group.groupImage] && (
                       <img
-                        src={course.image}
-                        alt={course.title}
-                        className="card-img-top img-fluid p-3"
-                        style={{ height: '180px', objectFit: 'contain' }}
+                        src={imageMap[group.groupImage]}
+                        alt={group.category}
+                        className="me-3"
+                        style={{ height: 50, width: 50, objectFit: 'contain' }}
                       />
                     )}
-                    <div className="card-body d-flex flex-column text-center">
-                      <h5 className="card-title fw-semibold mb-2 text-dark border-bottom pb-2">{course.title}</h5>
-                      <p className="card-text text-muted">{course.desc}</p>
-
-                      {expandedIndex === course.courseID && (
-                        <p className="card-text text-dark small mt-2">{course.more}</p>
-                      )}
-
-                      <div className="d-flex flex-column gap-2 mt-auto">
-                        <button
-                          onClick={() => toggleExpand(course.courseID)}
-                          className="btn btn-outline-primary fw-semibold"
-                        >
-                          {expandedIndex === course.courseID ? "⬆ Show Less" : "⬇ Learn More"}
-                        </button>
-
-                        <a
-                          href={`https://wa.me/${whatsappNumber}?text=${encodeMessage(course.title)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn btn-success"
-                        >
-                          📱 Ask on WhatsApp
-                        </a>
-                      </div>
+                    <div>
+                      <h4 className="card-title text-primary mb-0">{group.category}</h4>
+                      <p className="text-muted small">{group.groupDesc}</p>
                     </div>
                   </div>
+
+                  {expandedGroups[group.category] && (
+                    <div className="row g-3 mt-3">
+                      {group.courses.map((course) => (
+                        <div className="col-12" key={course.courseID}>
+                          <div className="card course-card border">
+                            <div className="row g-0 align-items-center">
+                              {imageMap[course.image] && (
+                                <div className="col-4 p-2">
+                                  <img
+                                    src={imageMap[course.image]}
+                                    alt={course.title}
+                                    className="img-fluid"
+                                    style={{ maxHeight: '100px', objectFit: 'contain' }}
+                                  />
+                                </div>
+                              )}
+                              <div className="col-8 p-2">
+                                <h6 className="fw-semibold mb-1">{course.title}</h6>
+                                <p className="text-muted small mb-2">{course.desc}</p>
+
+                                {courseDescExpanded[course.courseID] && (
+                                  <p className="text-dark small mb-2">{course.more}</p>
+                                )}
+
+                                <div className="d-flex flex-column gap-2">
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation(); // Prevent parent click
+                                      toggleCourseDescription(course.courseID);
+                                    }}
+                                    className="btn btn-sm btn-outline-primary"
+                                  >
+                                    {courseDescExpanded[course.courseID]
+                                      ? "⬆ Hide Description"
+                                      : "⬇ Show Description"}
+                                  </button>
+
+                                  <a
+                                    href={`https://wa.me/${whatsappNumber}?text=${encodeMessage(course.title)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-sm btn-success"
+                                  >
+                                    📱 Ask on WhatsApp
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {!expandedGroups[group.category] && (
+                    <p className="text-end text-primary mt-3">Click to view courses ⬇</p>
+                  )}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
