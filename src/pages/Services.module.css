@@ -1,0 +1,17 @@
+/* Services.module.css */
+
+.carouselItem {
+  transition: transform 0.8s ease-in-out, opacity 1s ease-in-out !important;
+}
+
+.carouselIndicators button {
+  background-color: #0d6efd;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
