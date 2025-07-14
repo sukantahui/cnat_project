@@ -49,7 +49,7 @@
   {
     "category": "Programming",
     "groupImage": "programmingImg",
-    "groupDesc": "Learn HTML, CSS, JS, React, Node.js & more.",
+    "groupDesc": "Programming is the foundation of software development, enabling you to instruct computers to perform tasks efficiently and intelligently. This course group introduces you to popular programming languages like Java, Python, C, and C++, focusing on core concepts such as logic building, problem solving, and structured programming. Whether you're a complete beginner or brushing up for interviews, these courses help you master syntax, algorithms, data structures, and object-oriented programming principles.",
     "courses": [
       {
         "courseID": "course002",
@@ -96,7 +96,7 @@
   {
     "category": "Accounts",
     "groupImage": "accountsImg",
-    "groupDesc": "Learn Accounts",
+    "groupDesc": "The Accounts and Taxation group is designed to equip students and professionals with practical knowledge of financial accounting, GST, TDS, and Income Tax filing. Whether you're aiming for a career in finance or want to manage your own business records, these courses provide a strong foundation in bookkeeping, tax compliance, and accounting software like Tally and Excel.",
     "courses": [
       {
         "courseID": "course003",
@@ -151,7 +151,7 @@
   {
     "category": "Data Analysis",
     "groupImage": "dataanalysisImg",
-    "groupDesc": "Data analysis details",
+    "groupDesc": "    The Data Analysis group focuses on turning raw data into meaningful insights to support decision-making. These courses teach you how to work with Excel, Power BI, SQL, and data visualization tools to analyze trends, build dashboards, and present reports effectively. Whether you're a student, business professional, or aspiring analyst, this group will help you develop essential analytical skills to thrive in today’s data-driven world.",
     "courses": [
       {
         "courseID": "course004",

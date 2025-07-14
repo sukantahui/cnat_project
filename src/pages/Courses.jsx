@@ -81,7 +81,7 @@ const Courses = () => {
                     />
                     <div>
                       <h4 className="card-title text-primary mb-0">{group.category}</h4>
-                      <p className="text-muted small">{group.groupDesc}</p>
+                      <p className="text-muted small" style={{ textAlign: 'justify' }}>{group.groupDesc}</p>
                     </div>
                   </div>
 
@@ -91,16 +91,14 @@ const Courses = () => {
                         <div className="col-12" key={course.courseID}>
                           <div className="card course-card border">
                             <div className="row g-0 align-items-center">
-                              {imageMap[course.image] && (
-                                <div className="col-4 p-2">
-                                  <img
-                                    src={imageMap[course.image] || imageMap.defaultImg}
-                                    alt={course.title}
-                                    className="img-fluid"
-                                    style={{ maxHeight: '100px', objectFit: 'contain' }}
-                                  />
-                                </div>
-                              )}
+                              <div className="col-4 p-2">
+                                <img
+                                  src={imageMap[course.image] || imageMap.defaultImg}
+                                  alt={course.title}
+                                  className="img-fluid"
+                                  style={{ maxHeight: '100px', objectFit: 'contain' }}
+                                />
+                              </div>
                               <div className="col-8 p-2">
                                 <h6 className="fw-semibold mb-1">{course.title}</h6>
                                 <p className="text-muted small mb-2">{course.desc}</p>
