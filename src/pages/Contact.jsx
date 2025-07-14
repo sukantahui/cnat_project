@@ -1,6 +1,6 @@
 // src/Contact.jsx
 import React from 'react';
-
+import emailImg from '../assets/email.logo.svg';
 const Contact = () => {
   const whatsappNumber = "919432456083";
   const message = encodeURIComponent("Hi, I want to know about your courses and fees.");
@@ -50,7 +50,10 @@ const Contact = () => {
 
         {/* ✅ Contact Email */}
         <div className="mt-4">
-          <h5 className="fw-bold">📧 Email</h5>
+          <h5 className="fw-bold">📧 Email us</h5>
+          <p>
+            <a href="mailto:info.codenaccotax@co.in">info.codenaccotax@co.in</a>
+          </p>
           <p>
             <a href="mailto:codenaccotax@gmail.com">codenaccotax@gmail.com</a>
           </p>
