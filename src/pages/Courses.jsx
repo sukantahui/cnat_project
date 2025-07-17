@@ -40,6 +40,7 @@ const Courses = () => {
   const [expandedGroups, setExpandedGroups] = useState({});
   const [courseDescExpanded, setCourseDescExpanded] = useState({});
   const whatsappNumber = "919432456083";
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const toggleGroup = (category) => {
     setExpandedGroups(prev => ({
@@ -65,7 +66,7 @@ const Courses = () => {
 
         <div className="row g-4">
           {coursesData.map((group) => (
-            <div className="col-12 col-md-6" key={group.category}>
+            <div className={isMobile? 'col-12 col-md-6' : expandedGroups[group.category] ? 'col-12' : 'col-6'} key={group.category}>
               <div
                 className="card shadow-sm border-0 h-100 group-card"
                 onClick={() => toggleGroup(group.category)}
@@ -88,7 +89,7 @@ const Courses = () => {
                   {expandedGroups[group.category] && (
                     <div className="row g-3 mt-3" onClick={(e) => e.stopPropagation()}>
                       {group.courses.map((course) => (
-                        <div className="col-12" key={course.courseID}>
+                        <div className={isMobile? 'col-12' : 'col-6'} key={course.courseID}>
                           <div className="card course-card border">
                             <div className="row g-0 align-items-center">
                               <div className="col-4 p-2">
