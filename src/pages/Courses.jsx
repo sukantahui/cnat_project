@@ -41,6 +41,7 @@ const Courses = () => {
   const [expandedGroups, setExpandedGroups] = useState({});
   const [courseDescExpanded, setCourseDescExpanded] = useState({});
   const whatsappNumber = "919432456083";
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const courseRefs = useRef({});
 
