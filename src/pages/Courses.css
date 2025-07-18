@@ -14,17 +14,101 @@
   transition: all 0.3s ease;
 }
 
+.btn:hover {
+  transform: scale(1.03);
+}
+
 .btn-outline-primary:hover {
   background-color: #0d6efd;
   color: #fff;
 }
 
-.course-card:hover {
-  transform: scale(1.01);
+.course-card {
   transition: transform 0.2s ease-in-out;
+}
+
+.course-card:hover {
+  transform: scale(1.02);
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
 
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group-card:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.course-card img,
+.group-card img {
+  object-fit: contain;
+  max-height: 100px;
+  width: 100%;
+}
+
+.group-card {
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.group-card:hover {
+  background-color: #f1f1f1; /* Light gray */
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.group-card:hover .card-title,
+.group-card:hover p {
+  color: #000 !important; /* Ensure black text */
+}
+
+
+.view-more-link {
+  color: #0d6efd;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  background-color: #eaf1ff;
+  transition: all 0.3s ease;
+}
+
+.view-more-link:hover {
+  background-color: #d0e2ff;
+  color: #084298;
+  text-decoration: none;
+}
+
+.group-header-responsive {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* .w-md-40 {
+    width: 40% !important;
+  }
+  .w-md-60 {
+    width: 60% !important;
+  } */
+  .group-header-responsive {
+    width: 40%;
+  }
+}

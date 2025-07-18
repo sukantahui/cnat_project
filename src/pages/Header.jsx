@@ -44,7 +44,7 @@ const Header = () => {
         <div className="container">
           <h1 className="display-3 fw-bold mb-3">Coder & AccoTax</h1>
           <p className="lead fs-4 mb-4">
-            Learn to Code. Build the Future. Get Job-Ready.
+            Shaping Futures with Code and Compliance.
           </p>
           <a href="#courses" className="btn btn-outline-light btn-lg px-4">
             🚀 Explore Courses
